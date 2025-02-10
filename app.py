@@ -36,7 +36,7 @@ def get_transcript(url):
             st.error("Invalid YouTube URL")
             return False
         
-        transcript = YouTubeTranscriptApi.get_transcript(video_id)
+        transcript = YouTubeTranscriptApi.get_transcript(video_id, languages = ['en','fr'])
         text = " ".join([entry["text"] for entry in transcript])
         
         # Store transcript in session state instead of file
